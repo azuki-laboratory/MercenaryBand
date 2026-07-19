@@ -8,12 +8,7 @@ public partial class Main : Control
 
     public override void _Ready()
     {
-        var bg = new ColorRect
-        {
-            Size = new Vector2(800, 600),
-            Color = new Color(0.1f, 0.1f, 0.15f)
-        };
-        AddChild(bg);
+        MouseFilter = MouseFilterEnum.Ignore;
 
         Hud = new UI.HudDisplay();
         Hud.Name = "Hud";

@@ -20,3 +20,7 @@ config/icon="res://icon.svg"
 DataManager="res://scenes/autoloads/DataLoader.tscn"
 GameState="res://scenes/autoloads/GameManager.tscn"
 SaveManager="res://scenes/autoloads/SaveManager.tscn"
+
+[dotnet]
+
+project/assembly_name="MercenaryBand"
