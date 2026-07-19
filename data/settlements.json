@@ -1,0 +1,82 @@
+[
+  {
+    "Id": "rivercross",
+    "Name": "\uAC15\uAC00\uB610 \uC131\uCC44",
+    "Type": "Town",
+    "Faction": "neutral",
+    "Coord": { "Q": -5, "R": -2 },
+    "Population": 800,
+    "Defense": 30,
+    "AttachedLocations": ["fishing_hut"]
+  },
+  {
+    "Id": "oakdale",
+    "Name": "\uC624\uD06C\uB370\uC77C \uC131\uCC44",
+    "Type": "Town",
+    "Faction": "noble_west",
+    "Coord": { "Q": -2, "R": -4 },
+    "Population": 1200,
+    "Defense": 45,
+    "AttachedLocations": ["barracks", "marketplace"]
+  },
+  {
+    "Id": "stonemill",
+    "Name": "\uB3CC\uB9DB\uB3CC \uC131\uCC44",
+    "Type": "Town",
+    "Faction": "neutral",
+    "Coord": { "Q": 2, "R": -4 },
+    "Population": 600,
+    "Defense": 20,
+    "AttachedLocations": ["mine"]
+  },
+  {
+    "Id": "kingsport",
+    "Name": "\uD0B9\uC988\uD3EC\uD2B8 \uC131",
+    "Type": "City",
+    "Faction": "noble_west",
+    "Coord": { "Q": 5, "R": -1 },
+    "Population": 3000,
+    "Defense": 80,
+    "AttachedLocations": ["castle", "marketplace", "temple"]
+  },
+  {
+    "Id": "crossroad",
+    "Name": "\uC2ED\uC790\uB85C",
+    "Type": "Village",
+    "Faction": "neutral",
+    "Coord": { "Q": 3, "R": 3 },
+    "Population": 300,
+    "Defense": 10,
+    "AttachedLocations": []
+  },
+  {
+    "Id": "thornwood",
+    "Name": "\uAC00\uC2DC\uC232 \uC131\uCC44",
+    "Type": "Town",
+    "Faction": "noble_east",
+    "Coord": { "Q": -1, "R": 4 },
+    "Population": 900,
+    "Defense": 35,
+    "AttachedLocations": ["barracks", "hunting_lodge"]
+  },
+  {
+    "Id": "ironpeak",
+    "Name": "\uBB34\uC1E0\uBD09\uC6B0\uB9AC \uC694\uC0C8",
+    "Type": "Fortress",
+    "Faction": "noble_east",
+    "Coord": { "Q": -4, "R": 3 },
+    "Population": 500,
+    "Defense": 100,
+    "AttachedLocations": ["castle", "mine", "barracks"]
+  },
+  {
+    "Id": "highpass",
+    "Name": "\uB192\uC740\uACE0\uAC1C",
+    "Type": "Village",
+    "Faction": "neutral",
+    "Coord": { "Q": 0, "R": 0 },
+    "Population": 200,
+    "Defense": 5,
+    "AttachedLocations": []
+  }
+]

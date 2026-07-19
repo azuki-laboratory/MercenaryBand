@@ -1,0 +1,57 @@
+[
+  {
+    "Id": "escort_caravan",
+    "Name": "\uD638\uC704 \uC784\uBB34",
+    "Description": "\uC0C1\uC778\uC758 \uB9C8\uCC28\uB97C \uBAA9\uC801\uC9C0\uAE4C\uC9C0 \uD638\uC704\uD558\uB77C.",
+    "Type": "Escort",
+    "Difficulty": 1,
+    "BaseReward": 150,
+    "TimeDays": 2,
+    "EnemyCount": { "Min": 2, "Max": 4 },
+    "EnemyTypes": ["bandit", "bandit_archer"]
+  },
+  {
+    "Id": "hunt_beasts",
+    "Name": "\uB9F9\uC218 \uD1F4\uCE58",
+    "Description": "\uC8FC\uBCC0\uC744 \uB5A0\uB3C4\uB294 \uB9F9\uC218\uB4E4\uC744 \uCC98\uCE58\uD558\uB77C.",
+    "Type": "Hunt",
+    "Difficulty": 1,
+    "BaseReward": 100,
+    "TimeDays": 1,
+    "EnemyCount": { "Min": 2, "Max": 3 },
+    "EnemyTypes": ["wolf", "direwolf"]
+  },
+  {
+    "Id": "defend_outpost",
+    "Name": "\uC804\uCD08 \uBC29\uC5B4",
+    "Description": "\uC801 \uC138\uB825\uC774 \uC804\uCD08\uB97C \uACF5\uACA9\uD558\uACE0 \uC788\uB2E4. \uBC29\uC5B4\uD558\uB77C!",
+    "Type": "Defend",
+    "Difficulty": 2,
+    "BaseReward": 250,
+    "TimeDays": 1,
+    "EnemyCount": { "Min": 4, "Max": 7 },
+    "EnemyTypes": ["bandit", "bandit_raider", "bandit_archer"]
+  },
+  {
+    "Id": "scout_territory",
+    "Name": "\uC815\uCC30 \uC784\uBB34",
+    "Description": "\uC801 \uC9C4\uC601\uC5D0 \uC815\uCC30\uC744 \uB098\uAC00 \uC815\uBCF4\uB97C \uC218\uC9D1\uD558\uB77C.",
+    "Type": "Scout",
+    "Difficulty": 1,
+    "BaseReward": 120,
+    "TimeDays": 2,
+    "EnemyCount": { "Min": 1, "Max": 3 },
+    "EnemyTypes": ["bandit", "bandit_archer"]
+  },
+  {
+    "Id": "bounty_hunt",
+    "Name": "\uD604\uC0C1\uAE08 \uC0AC\uB0E5",
+    "Description": "\uC704\uD5D8\uD55C \uB3C4\uB465 \uB450\uBAA9\uC744 \uCC98\uCE58\uD558\uB77C. \uD604\uC0C1\uAE08\uC774 \uAC78\uB824 \uC788\uB2E4.",
+    "Type": "Hunt",
+    "Difficulty": 3,
+    "BaseReward": 500,
+    "TimeDays": 3,
+    "EnemyCount": { "Min": 1, "Max": 1 },
+    "EnemyTypes": ["bandit_leader"]
+  }
+]
