@@ -11,11 +11,12 @@ config_version=5
 [application]
 
 config/name="MercenaryBand"
-config/features=PackedStringArray("C#")
+run/main_scene="res://scenes/Main.tscn"
+config/features=PackedStringArray("4.7", "C#")
 config/icon="res://icon.svg"
 
 [autoload]
 
-DataManager="*res://scripts/Core/DataLoader.cs"
-GameState="*res://scripts/Core/GameManager.cs"
-SaveManager="*res://scripts/Core/SaveManager.cs"
+DataManager="res://scenes/autoloads/DataLoader.tscn"
+GameState="res://scenes/autoloads/GameManager.tscn"
+SaveManager="res://scenes/autoloads/SaveManager.tscn"

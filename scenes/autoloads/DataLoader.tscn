@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkm2c6g1y7q8x"]
+
+[ext_resource type="CSharpScript" path="res://scripts/Core/DataLoader.cs" id="1_dataloader"]
+
+[node name="DataLoader" type="Node"]
+script = ExtResource("1_dataloader")

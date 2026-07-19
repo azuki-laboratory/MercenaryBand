@@ -1,5 +1,8 @@
+using System.Text.Json.Serialization;
+
 namespace MercenaryBand.Data;
 
+[JsonConverter(typeof(JsonStringEnumConverter))]
 public enum ArmorSlot
 {
     Head,
