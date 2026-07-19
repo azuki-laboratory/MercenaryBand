@@ -1,0 +1,59 @@
+[
+  {
+    "Id": "strong",
+    "Name": "\uAC15\uC778\uD568",
+    "Category": "Physical",
+    "IsPositive": true,
+    "Modifiers": [
+      { "Stat": "Fatigue",  "Type": "Add", "Value": 15 },
+      { "Stat": "Hitpoints","Type": "Add", "Value": 10 }
+    ]
+  },
+  {
+    "Id": "tough",
+    "Name": "\uC9C8\uAE40",
+    "Category": "Physical",
+    "IsPositive": true,
+    "Modifiers": [
+      { "Stat": "Hitpoints", "Type": "Add", "Value": 5 },
+      { "Stat": "Resolve",   "Type": "Add", "Value": 5 }
+    ]
+  },
+  {
+    "Id": "eager",
+    "Name": "\uC758\uC695\uC801\uC784",
+    "Category": "Mental",
+    "IsPositive": true,
+    "Modifiers": [
+      { "Stat": "Initiative", "Type": "Add", "Value": 10 },
+      { "Stat": "Resolve",    "Type": "Add", "Value": 5 }
+    ]
+  },
+  {
+    "Id": "survivor",
+    "Name": "\uC0DD\uC874\uC790",
+    "Category": "Mental",
+    "IsPositive": true,
+    "Modifiers": [
+      { "Stat": "Resolve", "Type": "Add", "Value": 10 }
+    ]
+  },
+  {
+    "Id": "clubfooted",
+    "Name": "\uB9CC\uACE1\uC871",
+    "Category": "Physical",
+    "IsPositive": false,
+    "Modifiers": [
+      { "Stat": "Initiative", "Type": "Add", "Value": -15 }
+    ]
+  },
+  {
+    "Id": "nearsighted",
+    "Name": "\uADFC\uC2DC",
+    "Category": "Physical",
+    "IsPositive": false,
+    "Modifiers": [
+      { "Stat": "RangedSkill", "Type": "Add", "Value": -15 }
+    ]
+  }
+]

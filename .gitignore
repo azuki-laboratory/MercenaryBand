@@ -1,0 +1,19 @@
+# Godot
+.godot/
+*.import
+export_presets.cfg
+export/
+*.translation
+
+# C# / .NET
+bin/
+obj/
+*.user
+*.DotSettings.user
+.vs/
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db

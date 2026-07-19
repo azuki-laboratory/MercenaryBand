@@ -1,0 +1,56 @@
+[
+  {
+    "Id": "cloth_hood",
+    "Name": "\uCC9C \uD6C4\uB4DC",
+    "Slot": "Head",
+    "Armor": 20,
+    "Durability": 30,
+    "MaxFatiguePenalty": 0,
+    "Value": 15
+  },
+  {
+    "Id": "leather_cap",
+    "Name": "\uAC00\uC8FD \uBAA8\uC790",
+    "Slot": "Head",
+    "Armor": 35,
+    "Durability": 50,
+    "MaxFatiguePenalty": -2,
+    "Value": 50
+  },
+  {
+    "Id": "chainmail_coif",
+    "Name": "\uC0AC\uC288 \uCF54\uC774\uD504",
+    "Slot": "Head",
+    "Armor": 60,
+    "Durability": 70,
+    "MaxFatiguePenalty": -4,
+    "Value": 150
+  },
+  {
+    "Id": "tattered_tunic",
+    "Name": "\uB1E8\uACE0 \uC624\uB41C \uD29C\uB2C9",
+    "Slot": "Body",
+    "Armor": 15,
+    "Durability": 25,
+    "MaxFatiguePenalty": 0,
+    "Value": 10
+  },
+  {
+    "Id": "leather_armor",
+    "Name": "\uAC00\uC8FD \uAC11\uC637",
+    "Slot": "Body",
+    "Armor": 45,
+    "Durability": 60,
+    "MaxFatiguePenalty": -4,
+    "Value": 100
+  },
+  {
+    "Id": "chainmail",
+    "Name": "\uC0AC\uC288 \uAC11\uC637",
+    "Slot": "Body",
+    "Armor": 80,
+    "Durability": 100,
+    "MaxFatiguePenalty": -8,
+    "Value": 300
+  }
+]

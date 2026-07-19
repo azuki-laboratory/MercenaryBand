@@ -1,0 +1,33 @@
+[
+  {
+    "Id": "concussion",
+    "Name": "\uB1CC\uC9C4\uD0D5",
+    "DurationDays": { "Min": 1, "Max": 3 },
+    "Modifiers": [
+      { "Stat": "Initiative",    "Type": "Add", "Value": -30 },
+      { "Stat": "MeleeSkill",    "Type": "Add", "Value": -15 },
+      { "Stat": "RangedSkill",   "Type": "Add", "Value": -15 },
+      { "Stat": "MeleeDefense",  "Type": "Add", "Value": -10 },
+      { "Stat": "RangedDefense", "Type": "Add", "Value": -10 }
+    ]
+  },
+  {
+    "Id": "fractured_rib",
+    "Name": "\uB298\uACF5 \uACE8\uC808",
+    "DurationDays": { "Min": 2, "Max": 5 },
+    "Modifiers": [
+      { "Stat": "Fatigue",     "Type": "Add", "Value": -20 },
+      { "Stat": "Hitpoints",   "Type": "Add", "Value": -10 },
+      { "Stat": "Initiative",  "Type": "Add", "Value": -10 }
+    ]
+  },
+  {
+    "Id": "deep_wound",
+    "Name": "\uC2EC\uD55C \uC790\uC0C1",
+    "DurationDays": { "Min": 2, "Max": 4 },
+    "Modifiers": [
+      { "Stat": "Hitpoints",  "Type": "Add", "Value": -15 },
+      { "Stat": "Fatigue",    "Type": "Add", "Value": -10 }
+    ]
+  }
+]

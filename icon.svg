@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128">
+  <rect width="128" height="128" fill="#2d2d3f"/>
+  <circle cx="64" cy="64" r="48" fill="none" stroke="#8b0000" stroke-width="6"/>
+  <text x="64" y="74" text-anchor="middle" font-size="40" font-family="serif" fill="#d4af37">MB</text>
+</svg>

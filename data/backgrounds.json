@@ -1,0 +1,66 @@
+[
+  {
+    "Id": "farmhand",
+    "Name": "\uB18D\uC7A5 \uC77C\uB044",
+    "Description": "\uD3C9\uC0DD \uB18D\uC0AC\uC77C\uB9CC \uD574\uC628 \uD2BC\uD2BC\uD55C \uC77C\uB044\uC774\uB2E4.",
+    "BaseStats": {
+      "Hitpoints":  { "Min": 55, "Max": 70 },
+      "Fatigue":     { "Min": 95, "Max": 115 },
+      "Resolve":     { "Min": 25, "Max": 40 },
+      "Initiative":  { "Min": 90, "Max": 110 },
+      "MeleeSkill":  { "Min": 50, "Max": 60 },
+      "RangedSkill": { "Min": 30, "Max": 40 },
+      "MeleeDefense":{ "Min": 0,  "Max": 5 },
+      "RangedDefense":{ "Min": 0, "Max": 5 }
+    },
+    "ExcludedTraits": ["noble", "educated", "bookish"],
+    "WeightedTraits": [
+      { "TraitId": "strong", "Weight": 3 },
+      { "TraitId": "tough",  "Weight": 2 }
+    ],
+    "HiringCost": { "Min": 80, "Max": 200 },
+    "DailyWage": 5
+  },
+  {
+    "Id": "apprentice",
+    "Name": "\uACAC\uC2B5\uC0DD",
+    "Description": "\uB300\uC7A5\uAC04\uC758 \uC870\uC218\uC5D0\uC11C \uC77C\uD55C \uC5B4\uB9B0 \uACAC\uC2B5\uC0DD\uC774\uB2E4.",
+    "BaseStats": {
+      "Hitpoints":  { "Min": 45, "Max": 60 },
+      "Fatigue":     { "Min": 85, "Max": 105 },
+      "Resolve":     { "Min": 30, "Max": 45 },
+      "Initiative":  { "Min": 95, "Max": 115 },
+      "MeleeSkill":  { "Min": 45, "Max": 55 },
+      "RangedSkill": { "Min": 35, "Max": 45 },
+      "MeleeDefense":{ "Min": 0,  "Max": 5 },
+      "RangedDefense":{ "Min": 0, "Max": 5 }
+    },
+    "ExcludedTraits": [],
+    "WeightedTraits": [
+      { "TraitId": "eager", "Weight": 2 }
+    ],
+    "HiringCost": { "Min": 60, "Max": 150 },
+    "DailyWage": 4
+  },
+  {
+    "Id": "beggar",
+    "Name": "\uAC70\uC9C0",
+    "Description": "\uAC70\uB9AC\uC5D0\uC11C \uAD74\uC8FC\uB9AC\uBA70 \uC0B4\uC544\uC628 \uAC70\uC9C0\uB2E4.",
+    "BaseStats": {
+      "Hitpoints":  { "Min": 40, "Max": 55 },
+      "Fatigue":     { "Min": 80, "Max": 100 },
+      "Resolve":     { "Min": 20, "Max": 35 },
+      "Initiative":  { "Min": 85, "Max": 105 },
+      "MeleeSkill":  { "Min": 40, "Max": 50 },
+      "RangedSkill": { "Min": 25, "Max": 35 },
+      "MeleeDefense":{ "Min": -5, "Max": 0 },
+      "RangedDefense":{ "Min": -5, "Max": 0 }
+    },
+    "ExcludedTraits": ["noble", "educated"],
+    "WeightedTraits": [
+      { "TraitId": "survivor", "Weight": 3 }
+    ],
+    "HiringCost": { "Min": 20, "Max": 60 },
+    "DailyWage": 2
+  }
+]
