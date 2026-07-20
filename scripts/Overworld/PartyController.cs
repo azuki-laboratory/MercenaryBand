@@ -1,4 +1,5 @@
 using Godot;
+using static MercenaryBand.UI.Theme;
 
 namespace MercenaryBand.Overworld;
 
@@ -6,29 +7,46 @@ public partial class PartyController : Node2D
 {
     private Vector2 _target;
     private bool _isMoving;
-    private float _progress;
+    private float _animationTime;
 
     [Signal] public delegate void DestinationReachedEventHandler();
 
-    public float Speed { get; set; } = 60f;
+    public float Speed { get; set; } = 100f;
     public bool IsMoving => _isMoving;
 
     public override void _Ready()
     {
-        var rect = new ColorRect
+        var bannerPole = new ColorRect
         {
-            Size = new Vector2(14, 14),
-            Color = Colors.Gold,
-            Position = new Vector2(-7, -7)
+            Size = new Vector2(2, 16),
+            Color = new Color(0.5f, 0.4f, 0.3f),
+            Position = new Vector2(4, -16)
         };
-        AddChild(rect);
+        AddChild(bannerPole);
+
+        var banner = new ColorRect
+        {
+            Size = new Vector2(14, 10),
+            Color = new Color(Gold, 0.85f),
+            Position = new Vector2(-5, -26)
+        };
+        AddChild(banner);
+
+        var body = new ColorRect
+        {
+            Size = new Vector2(10, 10),
+            Color = Gold,
+            Position = new Vector2(-5, -5)
+        };
+        AddChild(body);
 
         var label = new Label
         {
-            Text = "P",
-            Position = new Vector2(-3, -4)
+            Text = "MB",
+            Position = new Vector2(-3, -3)
         };
-        label.AddThemeFontSizeOverride("font_size", 10);
+        label.AddThemeColorOverride("font_color", Colors.Black);
+        label.AddThemeFontSizeOverride("font_size", 8);
         AddChild(label);
     }
 
@@ -36,17 +54,17 @@ public partial class PartyController : Node2D
     {
         _target = target;
         _isMoving = true;
-        _progress = 0f;
+        _animationTime = 0f;
     }
 
-    public override void _Process(double delta)
+    public void UpdatePosition(float delta)
     {
         if (!_isMoving) return;
 
         var start = GlobalPosition;
         float dist = start.DistanceTo(_target);
 
-        if (dist < 4f)
+        if (dist < 3f)
         {
             GlobalPosition = _target;
             _isMoving = false;
@@ -54,7 +72,7 @@ public partial class PartyController : Node2D
             return;
         }
 
-        _progress += (float)delta * Speed / dist;
-        GlobalPosition = start.Lerp(_target, Mathf.Min(_progress, 1f));
+        _animationTime += delta * Speed / dist;
+        GlobalPosition = start.Lerp(_target, Mathf.Min(_animationTime, 0.98f));
     }
 }

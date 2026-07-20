@@ -3,6 +3,7 @@ using Godot;
 using MercenaryBand.Data;
 using MercenaryBand.Core;
 using MercenaryBand.Systems;
+using static MercenaryBand.UI.Theme;
 
 namespace MercenaryBand.UI;
 
@@ -10,6 +11,7 @@ public partial class TownScreen : Control
 {
     private SettlementDef _settlement = null!;
     private HudDisplay? _hud;
+    private GameHud? _gameHud;
     private VBoxContainer _menuContainer = null!;
     private Control? _currentPanel;
 
@@ -17,14 +19,22 @@ public partial class TownScreen : Control
 
     public override void _Ready()
     {
+        var bg = MakeBackground();
+        AddChild(bg);
+
         _hud = GetNodeOrNull<HudDisplay>("/root/Main/Hud");
+        _gameHud = GetNodeOrNull<GameHud>("/root/Main/GameHud");
+
+        var panel = MakePanel(new Vector2(340, 480));
+        panel.Position = new Vector2(30, 80);
+        AddChild(panel);
 
         _menuContainer = new VBoxContainer
         {
-            Position = new Vector2(420, 50),
-            Size = new Vector2(350, 500)
+            Position = new Vector2(50, 100)
         };
-        AddChild(_menuContainer);
+        _menuContainer.AddThemeConstantOverride("separation", 8);
+        panel.AddChild(_menuContainer);
 
         SetupBaseMenu();
     }
@@ -35,34 +45,43 @@ public partial class TownScreen : Control
 
         foreach (var child in GetChildren())
         {
-            if (child is Label titleLabel)
+            if (child is Label titleLabel && titleLabel.Name?.ToString() == "SettleTitle")
             {
                 titleLabel.QueueFree();
                 break;
             }
         }
 
-        var title = new Label
-        {
-            Text = $"-- {def.Name} ({def.Type}) --",
-            HorizontalAlignment = HorizontalAlignment.Center,
-            Position = new Vector2(0, 10),
-            Size = new Vector2(800, 30)
-        };
-        title.AddThemeFontSizeOverride("font_size", 22);
+        var title = MakeTitle($"  {def.Name}  ", 24);
+        title.Name = "SettleTitle";
+        title.Position = new Vector2(0, 20);
+        title.Size = new Vector2(400, 40);
         AddChild(title);
 
-        Log($"Entered {def.Name} (Pop: {def.Population})");
+        var typeLabel = MakeLabel($"{def.Type}  |  Pop: {def.Population}  |  Defense: {def.Defense}", 13);
+        typeLabel.Position = new Vector2(0, 52);
+        typeLabel.Size = new Vector2(400, 20);
+        typeLabel.HorizontalAlignment = HorizontalAlignment.Center;
+        AddChild(typeLabel);
+
+        var accentLine = new ColorRect
+        {
+            Size = new Vector2(320, 1),
+            Position = new Vector2(40, 74),
+            Color = new Color(Gold, 0.3f)
+        };
+        AddChild(accentLine);
+
+        Log($"Entered {def.Name}");
     }
 
     private void SetupBaseMenu()
     {
         ClearMenu();
-
-        AddButton("용병 모집", ShowRecruitPanel);
-        AddButton("장비 상점", ShowTradePanel);
-        AddButton("계약 의뢰", ShowContractPanel);
-        AddButton("떠나기", OnLeave);
+        AddMenuButton("  Recruit Mercenaries  ", ShowRecruitPanel);
+        AddMenuButton("  Trade Equipment  ", ShowTradePanel);
+        AddMenuButton("  View Contracts  ", ShowContractPanel);
+        AddMenuButton("  Leave Settlement  ", OnLeave);
     }
 
     private void ClearMenu()
@@ -73,59 +92,42 @@ public partial class TownScreen : Control
             child.QueueFree();
     }
 
-    private Button AddButton(string text, Action action)
+    private void AddMenuButton(string text, Action action)
     {
-        var btn = new Button
-        {
-            Text = text,
-            CustomMinimumSize = new Vector2(300, 40)
-        };
-        btn.AddThemeFontSizeOverride("font_size", 16);
+        var btn = MakeButton(text);
+        btn.CustomMinimumSize = new Vector2(290, 40);
         btn.Pressed += () => action();
         _menuContainer.AddChild(btn);
-        return btn;
     }
 
     private void ShowRecruitPanel()
     {
         ClearPanel();
-        var panel = new RecruitPanel();
-        panel.RecruitCompleted += (name) => { Log($"Recruited: {name}"); };
-        _currentPanel = panel;
-        _menuContainer.AddChild(panel);
-
+        _currentPanel = new RecruitPanel();
+        _menuContainer.AddChild(_currentPanel);
         var data = GetNode<DataLoader>("/root/DataManager");
-        panel.ShowRecruits(data, 3);
+        ((RecruitPanel)_currentPanel).ShowRecruits(data, 3);
     }
 
     private void ShowTradePanel()
     {
         ClearPanel();
-        var panel = new TradePanel();
-        panel.ItemPurchased += (name, cost) => { Log($"Purchased: {name} ({cost}g)"); };
-        _currentPanel = panel;
-        _menuContainer.AddChild(panel);
-
+        _currentPanel = new TradePanel();
+        _menuContainer.AddChild(_currentPanel);
         var data = GetNode<DataLoader>("/root/DataManager");
-        panel.ShowItems(data);
+        ((TradePanel)_currentPanel).ShowItems(data);
     }
 
     private void ShowContractPanel()
     {
         ClearPanel();
-        var panel = new ContractPanel();
-        panel.ContractAccepted += (name, reward) => { Log($"Contract accepted: {name} ({reward}g)"); };
-        _currentPanel = panel;
-        _menuContainer.AddChild(panel);
-
+        _currentPanel = new ContractPanel();
+        _menuContainer.AddChild(_currentPanel);
         var data = GetNode<DataLoader>("/root/DataManager");
-        panel.ShowContracts(data, _settlement.Id);
+        ((ContractPanel)_currentPanel).ShowContracts(data, _settlement.Id);
     }
 
-    private void ClearPanel()
-    {
-        _currentPanel?.QueueFree();
-    }
+    private void ClearPanel() { _currentPanel?.QueueFree(); }
 
     private void OnLeave()
     {
@@ -136,6 +138,6 @@ public partial class TownScreen : Control
     private void Log(string msg)
     {
         _hud?.AddLog(msg);
-        GD.Print($"[TownScreen] {msg}");
+        GD.Print($"[Town] {msg}");
     }
 }

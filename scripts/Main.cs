@@ -5,6 +5,7 @@ namespace MercenaryBand.Scripts;
 public partial class Main : Control
 {
     public UI.HudDisplay Hud { get; private set; } = null!;
+    public UI.GameHud GameHud { get; private set; } = null!;
 
     public override void _Ready()
     {
@@ -14,8 +15,13 @@ public partial class Main : Control
         Hud.Name = "Hud";
         AddChild(Hud);
 
-        Hud.AddLog("=== MercenaryBand ===");
-        Hud.AddLog("Click map to move party");
-        Hud.AddLog("Enter settlements for towns");
+        GameHud = new UI.GameHud();
+        GameHud.Name = "GameHud";
+        AddChild(GameHud);
+    }
+
+    public void ShowGameHud(bool show)
+    {
+        if (GameHud != null) GameHud.Visible = show;
     }
 }
